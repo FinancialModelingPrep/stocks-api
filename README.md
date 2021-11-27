@@ -1,4 +1,4 @@
-# [Stock API Documentation](https://site.financialmodelingprep.com)
+# [Stock API Documentation](https://site.financialmodelingprep.com/developer/docs)
 
 This describes how to use a free stock API's using financialmodelingprep.com. <br /> <br />
 **GET YOUR APIKEY IN SECOND ON https://site.financialmodelingprep.com/developer/docs**
