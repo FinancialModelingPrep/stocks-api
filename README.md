@@ -1,6 +1,9 @@
-# Stock API on https://site.financialmodelingprep.com.
-This describes how to use stock API's on financialmodelingprep.com. <br />
-**GET YOUR APIKEY IN SECOND ON https://site.financialmodelingprep.com/developer**
+# [Stock API Documentation](https://site.financialmodelingprep.com)
+
+This describes how to use a free stock API's using financialmodelingprep.com. <br /> <br />
+**GET YOUR APIKEY IN SECOND ON https://site.financialmodelingprep.com/developer/docs**
+
+
 
 1. **[Real-time price](#real-time-price)**
 2. **[Stock price list](#stock-price-list)**
@@ -8,7 +11,7 @@ This describes how to use stock API's on financialmodelingprep.com. <br />
 
 ## Real-time price
 
-### GET /v3/quote-short/{symbol}
+### GET https://financialmodelingprep.com/v3/quote-short/{symbol}?apikey=YOUR_API_KEY
 This is a quick endpoint that only returns the stock price. If you only need a price, this endpoint is preferable to the profile endpoint or quote because it is faster and lighter. The price returned is the current price at the time you made your request.
 
 **Documentation:** https://site.financialmodelingprep.com/developer/docs/realtime-stock-quote-api#Stock-Real-time-Price
@@ -16,7 +19,8 @@ This is a quick endpoint that only returns the stock price. If you only need a p
 **Request Parameters:**
 
 ```solidity
-symbol : Company Symbol, ex. AAPL
+String symbol : Company Symbol, ex. AAPL
+String apikey : your ApiKey
 ```
 **Response Example:**
 
@@ -29,7 +33,7 @@ symbol : Company Symbol, ex. AAPL
 
 ## Stock price list
 
-### GET /v3/quotes/{exchange}
+### GET  https://financialmodelingprep.com/api/v3/quotes/{exchange}?apikey=YOUR_API_KEY
 All Real-time stock prices.
 
 **Documentation:** https://site.financialmodelingprep.com/developer/docs/realtime-stock-quote-api#Stock-Price-list
@@ -37,25 +41,69 @@ All Real-time stock prices.
 **Request Parameters:**
 
 ```solidity
-exchange : String, ex. nyse
+String exchange : String, ex. nyse
+String apikey : your ApiKey
 ```
 **Response Example:**
 
 ```json
 [{
   "symbol" : "AAPL",
-  "price" : 318.68
-  "volume": 332607163
-}]
+  "name" : "Apple Inc.",
+  "price" : 156.81000000,
+  "changesPercentage" : -3.16784300,
+  "change" : -5.13000500,
+  "dayLow" : 156.36000000,
+  "dayHigh" : 160.44800000,
+  "yearHigh" : 165.70000000,
+  "yearLow" : 116.21000000,
+  "marketCap" : 2572687507456.00000000,
+  "priceAvg50" : 148.28620000,
+  "priceAvg200" : 138.18630000,
+  "volume" : 72367719,
+  "avgVolume" : 78850734,
+  "exchange" : "NASDAQ",
+  "open" : 159.56500000,
+  "previousClose" : 161.94000000,
+  "eps" : 5.61000000,
+  "pe" : 27.95187000,
+  "earningsAnnouncement" : "2022-01-25T10:59:00.000+0000",
+  "sharesOutstanding" : 16406399512,
+  "timestamp" : 1638015369
+},{
+  "symbol" : "FB",
+  "name" : "Meta Platforms, Inc.",
+  "price" : 333.12000000,
+  "changesPercentage" : -2.32803700,
+  "change" : -7.94000240,
+  "dayLow" : 331.90200000,
+  "dayHigh" : 337.75000000,
+  "yearHigh" : 384.33000000,
+  "yearLow" : 244.61000000,
+  "marketCap" : 948745732096.00000000,
+  "priceAvg50" : 335.99740000,
+  "priceAvg200" : 327.78296000,
+  "volume" : 12059658,
+  "avgVolume" : 21449852,
+  "exchange" : "NASDAQ",
+  "open" : 335.79500000,
+  "previousClose" : 341.06000000,
+  "eps" : 13.97400000,
+  "pe" : 23.83855600,
+  "earningsAnnouncement" : "2022-01-25T10:59:00.000+0000",
+  "sharesOutstanding" : 2848059955,
+  "timestamp" : 1638015468
+},{}]
 ```
-
+### GET https://financialmodelingprep.com/api/v3/historical-price-full/{symbol}?apikey=YOUR_API_KEY
 ## Stock historical prices
 These endpoints provides access to historical prices that can be used to create charts. It's updated every day and can go back 15 years in time. You can also get a more than one stock with a single request, for example: historical-price-full/AAPL,FB.
 
 **Request Parameters:**
 
 ```solidity
-symbol : Company Symbol, ex. AAPL
+String symbol : Company Symbol, ex. AAPL
+String apikey : your ApiKey
 ```
 
 **Response Example:**
