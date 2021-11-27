@@ -1,5 +1,6 @@
 # Stock API on https://site.financialmodelingprep.com.
 This describes how to use stock API's on financialmodelingprep.com. 
+**GET YOUR APIKEY IN SECOND ON https://site.financialmodelingprep.com/developer**
 
 1. **[Real-time price](#real-time-price)**
 2. **[Stock price list](#stock-price-list)**
